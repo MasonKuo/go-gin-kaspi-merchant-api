@@ -38,7 +38,7 @@ type GetOrdersRequest struct {
 }
 
 func (p *GetOrdersRequest) ToUrlValues() (url.Values, error) {
-	if p.PageNumber <= 0 {
+	if p.PageNumber < 0 {
 		return nil, ErrPageNumber
 	}
 	if p.PageSize <= 0 {
