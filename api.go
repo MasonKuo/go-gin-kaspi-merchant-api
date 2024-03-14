@@ -59,6 +59,7 @@ func (a *api) do(ctx context.Context, method method, path string, params url.Val
 		req.URL.RawQuery = params.Encode()
 	}
 
+	req.Header.Set("Accept", "*/*")
 	req.Header.Set("Content-Type", "application/vnd.api+json")
 	req.Header.Set("X-Auth-Token", a.authToken)
 
