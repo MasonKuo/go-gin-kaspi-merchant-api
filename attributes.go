@@ -46,7 +46,7 @@ type OrderAttributes struct {
 	State      OrdersState  `json:"state"`
 	Status     OrdersStatus `json:"status"`
 	Code       string       `json:"code"`
-	TotalPrice int          `json:"totalPrice"`
+	TotalPrice float64      `json:"totalPrice"`
 	Customer   struct {
 		Id        string `json:"id"`
 		Name      string `json:"name"`
@@ -92,8 +92,8 @@ type OrderAttributes struct {
 	CourierTransmissionPlanningDate int64 `json:"courierTransmissionPlanningDate"`
 	CourierTransmissionDate         int64 `json:"courierTransmissionDate"`
 
-	DeliveryCost          int `json:"deliveryCost"`
-	DeliveryCostForSeller int `json:"deliveryCostForSeller"`
+	DeliveryCost          float64 `json:"deliveryCost"`
+	DeliveryCostForSeller float64 `json:"deliveryCostForSeller"`
 
 	Waybill       string `json:"waybill"`
 	WaybillNumber string `json:"waybillNumber"`
