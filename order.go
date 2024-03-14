@@ -66,9 +66,9 @@ func (p *GetOrdersRequest) ToUrlValues() (url.Values, error) {
 	params := make(url.Values)
 	params.Add("page[number]", strconv.Itoa(p.PageNumber))
 	params.Add("page[size]", strconv.Itoa(p.PageSize))
-	params.Add("filter[orders][creationDate][$ge]", strconv.FormatInt(p.Filter.Orders.CreationDateGe.Unix(), 10))
+	params.Add("filter[orders][creationDate][$ge]", strconv.FormatInt(p.Filter.Orders.CreationDateGe.UnixMilli(), 10))
 	if p.Filter.Orders.CreationDateLe.Unix() > 0 {
-		params.Add("filter[orders][creationDate][$le]", strconv.FormatInt(p.Filter.Orders.CreationDateLe.Unix(), 10))
+		params.Add("filter[orders][creationDate][$le]", strconv.FormatInt(p.Filter.Orders.CreationDateLe.UnixMilli(), 10))
 	}
 	params.Add("filter[orders][state]", string(p.Filter.Orders.State))
 	if p.Filter.Orders.Status != "" {
